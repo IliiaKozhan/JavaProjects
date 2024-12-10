@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Документація програми ScreenRecorderApp</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 4px;
+            font-family: monospace;
+        }
+	</style>
+</head>
+<body>
+<header>
+	<h1>Документація програми ScreenRecorderApp</h1>
+</header>
+
+<section>
+	<h2>Огляд програми</h2>
+	<p>ScreenRecorderApp - це програма для запису екрану, збереження кадрів у вигляді PNG-зображень та їх відтворення у вигляді відео. Вона розроблена на основі бібліотеки Swing.</p>
+</section>
+
+<section>
+	<h2>Основні компоненти програми</h2>
+
+	<h3>Клас: <code>ScreenRecorderApp</code></h3>
+	<p>Головний клас програми, який реалізує графічний інтерфейс та основну функціональність.</p>
+
+	<h4>Поля</h4>
+	<ul>
+		<li><code>isRecording</code>: Логічне значення, яке вказує, чи триває запис.</li>
+		<li><code>frames</code>: Список кадрів, збережених під час запису.</li>
+		<li><code>timer</code>: Таймер для періодичного захоплення кадрів екрану.</li>
+	</ul>
+
+	<h4>Методи</h4>
+	<ul>
+		<li>
+			<h5><code>main(String[] args)</code></h5>
+			<p>Точка входу в програму. Викликає створення графічного інтерфейсу.</p>
+		</li>
+		<li>
+			<h5><code>ScreenRecorderApp()</code></h5>
+			<p>Конструктор. Налаштовує вікно програми та додає кнопки для управління записом.</p>
+		</li>
+		<li>
+			<h5><code>startRecording()</code></h5>
+			<p>Починає запис екрану. Захоплює кадри з частотою 19 кадрів на секунду.</p>
+		</li>
+		<li>
+			<h5><code>stopRecording()</code></h5>
+			<p>Зупиняє запис та зберігає кадри у вигляді зображень у папці <code>frames</code>.</p>
+		</li>
+		<li>
+			<h5><code>saveFramesAsImages()</code></h5>
+			<p>Зберігає всі кадри у файли PNG у папці <code>frames</code>.</p>
+		</li>
+		<li>
+			<h5><code>playRecording()</code></h5>
+			<p>Відтворює записані кадри у новому вікні у повноекранному режимі.</p>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Задіяні бібліотеки</h2>
+	<ul>
+		<li>
+			<h4><code>javax.swing</code></h4>
+			<p>Використовується для створення графічного інтерфейсу (вікна, кнопки, JLabel).</p>
+		</li>
+		<li>
+			<h4><code>java.awt</code></h4>
+			<p>Надає класи для захоплення екрану (<code>Robot</code>, <code>Rectangle</code>) та налаштування інтерфейсу.</p>
+		</li>
+		<li>
+			<h4><code>javax.imageio</code></h4>
+			<p>Використовується для збереження зображень у файли формату PNG.</p>
+		</li>
+		<li>
+			<h4><code>java.util</code></h4>
+			<p>Надає клас <code>ArrayList</code> для зберігання кадрів у пам'яті.</p>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Як працює програма</h2>
+	<ol>
+		<li>Користувач запускає програму і бачить три кнопки: "Start Recording", "Stop Recording" та "Play Recording".</li>
+		<li>Натискання "Start Recording" запускає процес запису екрану, кадри додаються до списку <code>frames</code>.</li>
+		<li>Натискання "Stop Recording" зупиняє запис і зберігає кадри як PNG-зображення.</li>
+		<li>Натискання "Play Recording" відкриває нове вікно і відтворює записані кадри у вигляді відео.</li>
+	</ol>
+</section>
+</body>
+</html>
